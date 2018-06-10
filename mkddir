@@ -1,0 +1,30 @@
+#!/bin/bash
+#Creates directory with YYYYMMDD as the title in current working directory.
+
+display_help(){
+   echo
+   echo "$(basename $0) --> Creates directory with YYYYMMDD as the title in current working directory."
+   echo
+   echo "Usage: $(basename $0) [-h]"
+   echo
+   echo "   -h, 	Display this help dialogue"
+}
+
+# Read options, if any
+while getopts h opt
+do
+   case $opt
+      in
+         h) display_help; exit 0;;
+         *) display_help; exit 1;;
+   esac
+done
+
+# Check if 2 or less arguments were given
+if [ "$#" -gt 0 ] ; then
+    echo Error: Arguments not permitted.
+    display_help
+    exit 2
+fi
+
+mkdir $(date +%Y%m%d)

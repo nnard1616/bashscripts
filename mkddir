@@ -20,7 +20,7 @@ do
    esac
 done
 
-# Check if 2 or less arguments were given
+# Check if no arguments are given.
 if [ "$#" -gt 0 ] ; then
     echo Error: Arguments not permitted.
     display_help

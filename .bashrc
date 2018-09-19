@@ -116,10 +116,19 @@ if ! shopt -oq posix; then
   fi
 fi
 
-TMP="/tmp"
 # Install Ruby Gems to ~/gems
 export GEM_HOME=$HOME/gems
 export PATH=$HOME/gems/bin:$PATH
 
 # Add custom bash scripts to path
 export PATH=~/Programming/bashscripts:$PATH
+
+
+# vulkan stuff
+#export VULKAN_SDK="~/vulkan/1.1.77.0/x86_64"
+#export PATH="$VULKAN_SDK/bin:$PATH"
+#export LD_LIBRARY_PATH="$VULKAN_SDK/lib:$LD_LIBRARY_PATH"
+#export VK_LAYER_PATH="$VULKAN_SDK/etc/explicit_layer.d"
+
+# use ctrl s in vim to save
+stty -ixon

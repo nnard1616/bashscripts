@@ -5,17 +5,20 @@ display_help(){
    echo
    echo "$(basename $0) --> Returns date in YYYYMMDD format."
    echo
-   echo "Usage: $(basename $0) [-h]"
+   echo "Usage: $(basename $0) [-hd]"
    echo
    echo "   -h, 	Display this help dialogue"
+   echo "   -d, 	Hyphenated date."
+
 }
 
 # Read options, if any
-while getopts h opt
+while getopts "hd" opt
 do
    case $opt
       in
          h) display_help; exit 0;;
+         d) date +%Y-%m-%d; exit 0;;
          *) display_help; exit 1;;
    esac
 done

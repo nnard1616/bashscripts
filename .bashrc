@@ -132,3 +132,5 @@ export PATH=~/Programming/bashscripts:$PATH
 
 # use ctrl s in vim to save
 stty -ixon
+export PATH=~/bin:$PATH
+export PATH=/home/nathan/Downloads/cmake-3.12.2-Linux-x86_64/bin/:$PATH

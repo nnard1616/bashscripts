@@ -123,6 +123,9 @@ export PATH=$HOME/gems/bin:$PATH
 # Add custom bash scripts to path
 export PATH=~/Programming/bashscripts:$PATH
 
+#path stuff
+export PATH=~/bin:$PATH
+export PATH=/home/nathan/Downloads/cmake-3.12.2-Linux-x86_64/bin/:$PATH
 
 # vulkan stuff
 #export VULKAN_SDK="~/vulkan/1.1.77.0/x86_64"
@@ -130,7 +133,14 @@ export PATH=~/Programming/bashscripts:$PATH
 #export LD_LIBRARY_PATH="$VULKAN_SDK/lib:$LD_LIBRARY_PATH"
 #export VK_LAYER_PATH="$VULKAN_SDK/etc/explicit_layer.d"
 
-# use ctrl s in vim to save
+# Disable ctrl s and ctrl q
 stty -ixon
-export PATH=~/bin:$PATH
-export PATH=/home/nathan/Downloads/cmake-3.12.2-Linux-x86_64/bin/:$PATH
+
+# start in vi mode (holy shit!)
+set -o vi
+
+# aliases
+# Adding color
+alias ls='ls -hN --color=auto --group-directories-first'
+alias grep="grep --color=auto" # Color grep - highlight desired sequence.
+alias ccat="highlight --out-format=ansi" # Color cat - print file with syntax highlighting.
